@@ -11,8 +11,16 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // \App\Models\User::factory(10)->create();
+        //调用其他的填充
+        $this->call(CategorySeeder::class);
+        $this->call(GoodSeeder::class);
+        $this->call(SliderSeeder::class);
+        $this->call(MenuSeeder::class);
+        $this->call(PermissionSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(CitySeeder::class);
     }
 }
